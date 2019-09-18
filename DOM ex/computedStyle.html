@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <style>
+            body {
+                color: blue !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div style="width: 100px;height: 100px;background-color: papayawhip;"></div>
+        <p>Some text</p>
+        <button onclick="color()">Try it</button>
+        
+        <script>
+            function color() {
+                var elem = document.getElementsByTagName('div')[0];
+                console.log("all css" + elem.style.cssText);
+
+                var declaration = document.styleSheets[0].cssRules[0].style;
+                var priority = declaration.getPropertyPriority("color");
+                console.log("priority: " + priority);
+                
+                declaration.setProperty("background-color", "pink");
+
+                var removedProp = declaration.removeProperty("color");
+                console.log("removed css: " + removedProp);
+
+                var bcolor = window.getComputedStyle(elem, null).getPropertyValue("background-color");
+                var font = window.getComputedStyle(elem, null).getPropertyValue("font-family");
+                console.log("bcolor is: " + bcolor);
+                console.log("font family is: " + font);
+            }
+        </script> 
+    </body>
+</html>

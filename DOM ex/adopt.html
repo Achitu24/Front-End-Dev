@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <iframe src="delegation.html" style="height:200px;width:200px;"></iframe>
+        <button onclick="adopt()">Try it</button>
+
+        <div>Clone me</div>
+        <button onclick="clone()">Clone</button>
+
+        <script>
+            function adopt() {
+                var frame = document.getElementsByTagName('iframe')[0];
+                var table = frame.contentWindow.document.getElementsByTagName('table')[0];
+                //var newTable = document.adoptNode(table);
+                var newTable = document.importNode(table, true);
+                document.body.appendChild(newTable);
+            }
+
+            function clone() {
+                var div = document.getElementsByTagName('div')[0];
+                var clona = div.cloneNode(true);
+
+                document.body.appendChild(clona);
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <div id="scrollableDiv"></div>
+
+        <div id="outer-div" style='background-color: red;'> div
+            <p id="middle-p" style='background-color: yellow'> p
+                <span id="inner-span" style='background-color: blue'>span</span>
+            </p>
+        </div>
+
+        <script>
+            var script = document.createElement('script');
+            script.src = "https://notfound.com";
+            document.head.append(script);
+
+            script.onerror = function() {
+                
+                console.log('nope');
+            }
+
+            var img = document.createElement('img');
+            document.body.appendChild(img);
+            img.onerror = function() {
+                console.log('double nope');
+            }
+            img.onload = function() {
+                console.log('loaded img');
+            }
+
+            img.src = "a.jpg";
+           
+            ////////// 2 /////////////
+            document.addEventListener('keydown', function(event) {
+	            console.log(event.key + ' ' + event.code);
+            });
+
+            //////////// 3 ///////////////
+            // for (var i = 0; i < 30; i ++) {
+            //     var h1 = document.createElement('h1');
+            //     h1.innerHTML = "Document" + i;
+            //     document.body.appendChild(h1);
+            // }
+
+            // window.addEventListener('scroll', function(event) {
+            //     console.log(pageYOffset);
+            // });
+
+            // window.addEventListener('wheel', function(event) {
+            //     console.log('wheel');
+            //     event.preventDefault();
+            // });
+
+            sDiv = document.getElementById('scrollableDiv');
+
+            // for (var i = 0; i < 30; i ++) {
+            //     var h1 = document.createElement('h1');
+            //     h1.innerHTML = "Document" + i;
+            //     sDiv.appendChild(h1);
+            // }
+
+            // sDiv.addEventListener('wheel', function(event) {
+            //     console.log('wheel');
+            //     event.preventDefault();
+            // });
+
+            ////////// bubbling stuff ///////////
+            var od = document.getElementById('outer-div');
+            var mp = document.getElementById('middle-p');
+            var is = document.getElementById('inner-span');
+
+            od.addEventListener('click', function(event) {
+                console.log("click: " + this.id + " target: " + event.target);
+                console.log(event.eventPhase);
+            });
+
+            od.addEventListener('click', function(event) {
+                console.log("CAPTURE - click: " + this.id + " target: " + event.target);
+                console.log(event.eventPhase);
+            }, true);
+
+            mp.addEventListener('click', function(event) {
+                console.log("click: " + this.id + " target: " + event.target);
+            })
+
+            is.addEventListener('click', function(event) {
+                // event.stopPropagation();
+                //event.stopImmediatePropagation();
+                console.log("click: " + this.id + " target: " + event.target);
+            })
+
+            is.addEventListener('click', function(event) {
+                //event.stopPropagation();
+                console.log("second event");
+            })
+
+
+        </script>
+    </body>
+
+</html>

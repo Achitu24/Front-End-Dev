@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="unknown" id="unknownPile">
+            <h2>Unknown Pile</h2>
+            <hr>
+        </div>
+        <div class="notStarted" id="notStartedPile" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Not Started Pile</h2>
+            <hr>
+        </div>
+        <div class="box2">
+            <div class="progress" id="progressPile" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>Progress Pile</h2>
+                <hr>
+            </div>
+            <div class="blocked" id="blockedPile" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>Blocked Pile</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="finished" id="finishedPile" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Finished Pile</h2>
+            <hr>
+            <h1 id="stopWatch"><time>00:00:00</time></h1>
+            <hr>
+        </div>
+
+        <div class="peopleContainer">
+            <input id="peopleName" type="text" placeholder="name">
+            <button id="peopleAdd">Add</button>
+            <table class="people" id="peoplePile">
+
+
+            </table>
+
+        </div>
+
+    </div>
+    <div class="menu">
+        <input id="jobTitle" type="text" placeholder="Title">
+        <input id="jobDescription" type="text" placeholder="Description">
+        <input id="jobPriority" type="number" min="1" max="7" placeholder="Priority">
+        <select name="role" id="nameSelect">
+            <option value="" selected disabled hidden>Choose here</option>
+        </select>
+        <button id="jobButton">Add</button>
+        <button id="adminToggle">AdminMode</button>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<html> 
+    <style>
+    .highlight {
+        background-color: yellow !important;
+    }
+
+    .size {
+        width: 40px;
+        height: 40px;
+    }
+    </style>
+
+    <body>
+        <table>
+            <tr>
+                <td class="size" style='background-color: blue'><strong>row 1 cell 1</strong></td>
+                <td class="size" style='background-color: red'>row 1 cell 2</td>
+                <td class="size" style='background-color: green'>row 1 cell 3</td>
+            </tr>
+            <tr>
+                <td class="size" style='background-color: orange'>row 2 cell 1</td>
+                <td class="size" style='background-color: purple'>row 2 cell 2</td>
+                <td class="size" style='background-color: salmon'>row 2 cell 3</td>
+            </tr>
+            <tr>
+                <td class="size" style='background-color: skyblue'>row 3 cell 1</td>
+                <td class="size" style='background-color: teal'>row 3 cell 2</td>
+                <td class="size" style='background-color: wheat'>row 3 cell 3</td>
+            </tr>     
+            </table>
+            
+        <script>
+            var table = document.getElementsByTagName('table')[0];
+            var selectedTd;
+            table.addEventListener('click', function(event) {
+                var target = event.target;
+                if (target.tagName === 'TD') {
+                    highlight(target);
+                } 
+
+                //when we add <strong>, the target is no longer <td>
+                var td = event.target.closest('td'); //nearest ancestor
+                if (!td || !table.contains(td))
+                    return;
+                
+                highlight(td);
+
+            });
+
+            function highlight(target) {
+                if (selectedTd) {
+                    selectedTd.classList.remove('highlight');
+                }
+                selectedTd = target;
+                selectedTd.classList.add('highlight');
+            }
+
+
+        </script>
+    </body>
+</html>

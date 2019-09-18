@@ -1,0 +1,29 @@
+
+<div id="myDiv" style="width: 40px; height: 40px; background-color: blue"></div> 
+
+<script>
+    // hide() will be called automatically in 2 seconds
+    div = document.getElementById('myDiv');
+
+    function hide() {
+        var event = new CustomEvent("hideDiv", {
+            cancelable: true // without that flag preventDefault doesn't work
+        });
+        if (!div.dispatchEvent(event)) {
+            alert('the action was prevented by a handler');
+        } else {
+            div.hidden = true;
+        }
+    }
+
+    
+    div.addEventListener('hideDiv', function(event) {
+        if (confirm("Call preventDefault?")) {
+            event.preventDefault();
+        }
+    });
+
+    // hide in 2 seconds
+    setTimeout(hide, 2000);
+
+</script>

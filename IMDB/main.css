@@ -1,0 +1,96 @@
+.container {
+    display: table;
+    margin: 0 auto;
+    width: 512px;
+    margin-top: 150px;
+}
+
+hr {
+    width: 100%;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+select {
+    height: 30px;
+    margin-top: 10px;
+}
+
+.first {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first div:last-child {
+    display: inherit;
+}
+
+.second {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: beige;
+}
+
+.movies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movies>div:first-of-type {
+    margin-top: 20px;
+}
+
+
+
+
+/* ratingstar */
+
+input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check,
+.rated {
+    position: relative;
+    width: 20px;
+    height: 50px;
+    display: inline-block;
+}
+
+.check::before,
+.rated::after {
+    content: '\2605';
+    font-size: 26px;
+    position: absolute;
+    color: #777;
+    left: 0;
+    bottom: 0;
+    line-height: 50px;
+}
+
+.rated::after {
+    color: orange;
+}
+
+.check:hover::before {
+    color: orange;
+}
+
+
+/* ratingstar */
+
+#addingform {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

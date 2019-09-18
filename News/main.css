@@ -1,0 +1,71 @@
+body {
+    padding-top: 50px;
+}
+
+.project {
+    background-color: rgba(0, 204, 255, 0.062);
+}
+
+#page {
+    width: 500px;
+}
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#favoriteList {
+    width: 500px;
+    background-color: rgba(0, 47, 255, 0.295);
+    margin-top: 80px;
+}
+
+
+h3,
+h4 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.deleteButton,
+.addButton {
+    background-color: #2b2d47;
+    -moz-border-radius: 27px;
+    -webkit-border-radius: 27px;
+    border-radius: 27px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    padding: 0px 15px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.deleteButton:hover {
+    background-color: white;
+    color: #2b2d47;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: white;
+    color: #2b2d47;
+    cursor: pointer;
+}
+
+.disabled {
+    background-color: grey;
+    pointer-events: none;
+    cursor: default;
+    color: darkgray;
+}

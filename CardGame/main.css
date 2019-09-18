@@ -1,0 +1,79 @@
+#countDown {
+    display: table;
+    margin: auto;
+
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1440px;
+    height: 500px;
+    margin-top: 50px;
+}
+
+#winningCond {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#conditions {
+    border: 2px solid black;
+    width: 170px;
+    padding: 5px;
+}
+
+#conditions p {
+    text-align: center;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 490px;
+}
+
+#table,
+#emptySlots {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tableCards,
+.emptyCards {
+    margin-right: 20px;
+    border: 2px solid black;
+    width: 100px;
+    height: 160px;
+
+}
+
+.card {
+    border: 2px solid black;
+    width: 50px;
+    height: 70px;
+}
+
+.highlight {
+    border: 3px solid rgb(45, 143, 255);
+}
+
+
+
+
+
+#playButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#discard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 270px;
+}

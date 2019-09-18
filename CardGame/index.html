@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>cardGame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <p id="countDown">00:03:00</p>
+    </div>
+
+    <div id="container">
+        <div id="winningCond">
+            <p>Score : 170</p>
+
+            <div id="conditions">
+                <p>Winning Conditions</p>
+
+                <ol id="win">
+
+                </ol>
+            </div>
+        </div>
+        <div id="cards">
+            <div id="table">
+                <div class="tableCards" data-state='empty' draggable="true" ondragstart="dragStartCard(event)"
+                    id="card1">
+                </div>
+                <div class="tableCards" data-state='empty' draggable="true" ondragstart="dragStartCard(event)"
+                    id="card2">
+                </div>
+                <div class="tableCards" data-state='empty' draggable="true" ondragstart="dragStartCard(event)"
+                    id="card3">
+                </div>
+                <div class="tableCards" data-state='empty' draggable="true" ondragstart="dragStartCard(event)"
+                    id="card4">
+                </div>
+            </div>
+
+
+            <div id='emptySlots'>
+                <div class="emptyCards" data-state='empty' ondrop="dropCard(event)" ondragover="dragoverCard(event)">
+                </div>
+                <div class="emptyCards" data-state='empty' ondrop="dropCard(event)" ondragover="dragoverCard(event)">
+                </div>
+                <div class="emptyCards" data-state='empty' ondrop="dropCard(event)" ondragover="dragoverCard(event)">
+                </div>
+                <div class="emptyCards" data-state='empty' ondrop="dropCard(event)" ondragover="dragoverCard(event)">
+                </div>
+
+            </div>
+        </div>
+
+        <div id="playButtons">
+            <button id="shuffleButton">Shuffle</button>
+            <div id="discard">
+                <button id="deleteCard">Discard</button>
+                <div class="card" id="miniCard"></div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
